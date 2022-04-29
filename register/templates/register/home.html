@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Blog</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        Hi, {{ user.username }}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        Already have an account? 
+    <a href="{% url 'login' %}">Login</a>
+    <br>
+        New in our website?
+    <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    <h1>Welcome</h1>
+</body>
+</html>
